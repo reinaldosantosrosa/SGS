@@ -11,9 +11,10 @@ using System;
 namespace SGS.infra.Migrations
 {
     [DbContext(typeof(SaudeContext))]
-    partial class SaudeContextModelSnapshot : ModelSnapshot
+    [Migration("20180727123620_CriaClasserontuario")]
+    partial class CriaClasserontuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

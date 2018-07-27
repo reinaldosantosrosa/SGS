@@ -14,10 +14,11 @@ namespace SGS.infra.Data
         }
 
         public DbSet<Beneficiario> Beneficiarios { get; set; }
-
+        public DbSet<Prontuario> Prontuarios { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Beneficiario>().ToTable("Beneficiario");
+            modelBuilder.Entity<Prontuario>().ToTable("Prontuario");
         }
         
     }
