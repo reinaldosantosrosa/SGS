@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SGS.Web.Data;
 using SGS.Web.Models;
 using SGS.Web.Services;
+using SGS.infra.Data;
 
 namespace SGS.Web
 {
@@ -32,6 +33,9 @@ namespace SGS.Web
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddDbContext<SaudeContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
